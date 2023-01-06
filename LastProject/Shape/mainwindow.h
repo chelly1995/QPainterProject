@@ -23,31 +23,35 @@ public:
 private slots:
     void on_toolButton1_clicked();
 
+    void on_toolButton_2_clicked();
+
+    void on_LoadButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
-    QGraphicsRectItem *item;
-    QGraphicsEllipseItem *ellipse;
-    QGraphicsRectItem *rectangle;
-    QGraphicsScene *scene;
+    //    QGraphicsRectItem *item;
+    //    QGraphicsEllipseItem *ellipse;
+    //    QGraphicsRectItem *rectangle;
+    //    QGraphicsScene *scene;
 
-    void resizeImage(QImage*image, const QSize&newSize);
+    //    void resizeImage(QImage*image, const QSize&newSize);
 
-    bool modified;
-    QImage image;
-    QPointF prevPos;
-    QColor paintColor;
-    qreal paintSize;
-
-
+    //    bool modified;
+    //    QImage image;
+    //    QPointF prevPos;
+    //    QColor paintColor;
+    //    qreal paintSize;
+    QGraphicsScene*scene;
+    QString mResourceDir;
 
 protected:
-    void paintEvent(QPaintEvent *event)Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *event)Q_DECL_OVERRIDE;
+    //    void paintEvent(QPaintEvent *event)Q_DECL_OVERRIDE;
+    //    void resizeEvent(QResizeEvent *event)Q_DECL_OVERRIDE;
 
-    void mousePressEvent(QMouseEvent*event)Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent*event)Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent*event)Q_DECL_OVERRIDE;
+    //    void mousePressEvent(QMouseEvent*event)Q_DECL_OVERRIDE;
+    //    void mouseMoveEvent(QMouseEvent*event)Q_DECL_OVERRIDE;
+    //    void mouseReleaseEvent(QMouseEvent*event)Q_DECL_OVERRIDE;
 
 
 };

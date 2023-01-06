@@ -14,6 +14,7 @@
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
@@ -27,6 +28,7 @@ public:
     QGraphicsView *graphicsView;
     QToolButton *toolButton1;
     QToolButton *toolButton_2;
+    QPushButton *LoadButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -34,22 +36,25 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1020, 731);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(120, 10, 431, 361));
+        graphicsView->setGeometry(QRect(120, 10, 891, 681));
         toolButton1 = new QToolButton(centralwidget);
         toolButton1->setObjectName("toolButton1");
         toolButton1->setGeometry(QRect(20, 20, 20, 19));
         toolButton_2 = new QToolButton(centralwidget);
         toolButton_2->setObjectName("toolButton_2");
         toolButton_2->setGeometry(QRect(20, 40, 20, 19));
+        LoadButton = new QPushButton(centralwidget);
+        LoadButton->setObjectName("LoadButton");
+        LoadButton->setGeometry(QRect(20, 310, 80, 18));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 17));
+        menubar->setGeometry(QRect(0, 0, 1020, 17));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -65,6 +70,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         toolButton1->setText(QCoreApplication::translate("MainWindow", "O", nullptr));
         toolButton_2->setText(QCoreApplication::translate("MainWindow", "\343\205\201", nullptr));
+        LoadButton->setText(QCoreApplication::translate("MainWindow", "Load", nullptr));
     } // retranslateUi
 
 };
