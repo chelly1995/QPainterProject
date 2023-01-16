@@ -19,6 +19,8 @@ public:
 private slots:
     void on_actionImageload_triggered();
 
+    void on_actionColor_triggered();
+
 private:
 
      Scene * scene;

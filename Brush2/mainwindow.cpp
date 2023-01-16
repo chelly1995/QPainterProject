@@ -3,9 +3,12 @@
 #include "scene.h"
 
 
-#include <QGraphicsScene>
+//#include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QFileDialog>
+#include <QDoubleSpinBox>
+
+
 
 
 
@@ -15,10 +18,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    scene = new Scene(this);
-    //QGraphicsView *view = new QGraphicsView(this);
+    //  scene = new Scene(this);
+    // QGraphicsView *view = new QGraphicsView(this);
 
-    //ui->verticalLayout->addWidget(view);
+    //  ui->verticalLayout->addWidget(view);
+
+    //ui->spinBox->setValue(1);
+    // connect(ui->spinBox, SIGNAL(valueChanged(double)),scene,SLOT(setPaintSize(qreal)));
+    // ui->toolBar->addWidget(ui->spinBox);
+
+//    ui->spinBox->setValue(1.0f);
+//    connect(ui->spinBox, SIGNAL(valueChanged(double)), scene, SLOT(setPaintSize(qreal)));
 
 }
 
@@ -45,5 +55,14 @@ void MainWindow::on_actionImageload_triggered()
     view->setScene(scene);
     ui->verticalLayout->addWidget(view);
 
+
 }
+
+
+void MainWindow::on_actionColor_triggered()
+{
+    scene->setPaintColor();
+}
+
+
 

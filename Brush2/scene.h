@@ -9,6 +9,9 @@ class Scene: public QGraphicsScene
 public:
     Scene(QObject *parent = nullptr);
 
+    void setPaintColor();
+//    void setPaintSize(qreal);
+    QColor paintColor;
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
@@ -18,10 +21,17 @@ protected:
 
 private:
     void drawLineTo(const QPointF &endPoint);
+
+
     bool drawing;
     QGraphicsItemGroup * lineGroup;
     QPointF startingPoint;
     QPointF lastPenPoint;
+   // qreal paintSize;
+
+public slots:
+      //  void setPaintSize(qreal);
+
 };
 
 #endif // SCENE_H
