@@ -6,6 +6,8 @@
 #include <QPainterPath>
 #include <QKeyEvent>
 #include <QTransform>
+#include <QCursor>    // for Cursor
+#include <QGraphicsItem>
 
 Scene::Scene(QObject *parent)
     : QGraphicsScene{parent}, drawing(false), m_currentColor(Qt::red),paintSize(3.0f),rotateAngle(0.0)
@@ -34,7 +36,8 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent *event)    // 마우스 클
         item->setPath(path);
 
         pathList.append(item);
-    } else{
+
+    }else{
 
         m_startPos = event->scenePos();
 
@@ -83,6 +86,10 @@ void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         addItem(item);
         m_currentItem = item;
 
+    }else if(m_currentShape == Cursor){
+
+        QGraphicsItem *item = new QGraphicsItem();
+     item->setCursor(Qt::ArrowCursor);
     }
 
     //m_startPos = event->scenePos();
